@@ -1,1 +1,1 @@
-# My First Project using AWS infra
+# My First Project using AWS infrastructure
