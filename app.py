@@ -3,6 +3,7 @@ from aws_cdk import core
 
 from caproni_infrastructure.data_lake.stack import DataLakeStack
 from caproni_infrastructure.glue_catalog.stack import GlueCatalogStack
+from caproni_infrastructure.athena.stack import AthenaStack
 
 
 app = core.App()
