@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 
 setuptools.setup(
-    name="infrastructure_caproni_exchange",
+    name="caproni_infrastructure",
     version="0.0.1",
 
     description="An empty CDK Python app",
@@ -15,8 +15,8 @@ setuptools.setup(
 
     author="author",
 
-    package_dir={"": "infrastructure_caproni_exchange"},
-    packages=setuptools.find_packages(where="infrastructure_caproni_exchange"),
+    package_dir={"": "caproni_infrastructure"},
+    packages=setuptools.find_packages(where="caproni_infrastructure"),
 
     install_requires=[
         "aws-cdk.core==1.85.0",

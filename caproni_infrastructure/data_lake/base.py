@@ -4,7 +4,7 @@ from aws_cdk import (
     aws_s3 as s3,
 )
 
-from infrastructure_caproni_exchange.environment import Environment
+from caproni_infrastructure.environment import Environment
 
 
 class DataLakeLayer(Enum):

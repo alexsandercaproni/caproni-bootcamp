@@ -3,8 +3,8 @@ from aws_cdk import (
     aws_s3 as s3,
 )
 
-from infrastructure_caproni_exchange import active_environment
-from infrastructure_caproni_exchange.data_lake.base import (
+from caproni_infrastructure import active_environment
+from caproni_infrastructure.data_lake.base import (
     BaseDataLakeBucket,
     DataLakeLayer
 )
