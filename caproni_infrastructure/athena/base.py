@@ -10,7 +10,7 @@ class BaseAthenaBucket(s3.Bucket):
 
     def __init__(self, scope: core.Construct, deploy_env: Environment, **kwargs) -> None:
         self.deploy_env = deploy_env
-        self.obj_name = f's3-belisco-{self.deploy_env.value}-data-lake-athena-results'
+        self.obj_name = f's3-caproni-{self.deploy_env.value}-data-lake-athena-results'
 
         super().__init__(
             scope,
@@ -56,7 +56,7 @@ class BaseAthenaWorkgroup(athena.CfnWorkGroup):
         self.gb_scanned_cutoff_per_query = gb_scanned_cutoff_per_query
         self.deploy_env = deploy_env
         self.athena_bucket = athena_bucket
-        self.obj_name = f's3-belisco-{self.deploy_env.value}-data-lake-athena-workgroup'
+        self.obj_name = f's3-caproni-{self.deploy_env.value}-data-lake-athena-workgroup'
         super().__init__(
             scope,
             id=self.obj_name,
