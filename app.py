@@ -13,11 +13,22 @@ from caproni_infrastructure.dms.stack import DmsStack
 app = core.App()
 
 data_lake = DataLakeStack(app)
-glue_catalog = GlueCatalogStack(app, raw_data_lake_bucket=data_lake.data_lake_raw_bucket, processed_data_lake_bucket=data_lake.data_lake_processed_bucket)
+glue_catalog = GlueCatalogStack(
+                app,
+                raw_data_lake_bucket=data_lake.data_lake_raw_bucket,
+                processed_data_lake_bucket=data_lake.data_lake_processed_bucket)
+
 athena = AthenaStack(app)
-kineses = KinesisStack(app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
+kineses = KinesisStack(
+            app,
+            data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
+
 common_stack = CommonStack(app)
-dms = DmsStack(app, common_stack, data_lake_raw_bucket=data_lake)
+
+dms = DmsStack(
+        app,
+        common_stack=common_stack,
+        data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
 
 # Cria o CloudFormation
 app.synth()
