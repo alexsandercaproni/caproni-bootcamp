@@ -19,5 +19,5 @@ kineses = KinesisStack(app, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
 common_stack = CommonStack(app)
 dms = DmsStack(app, common_stack=common_stack, data_lake_raw_bucket=data_lake.data_lake_raw_bucket)
 
-# Cria o CloudFormation
+# Cria o CloudFormation e da o sync
 app.synth()
